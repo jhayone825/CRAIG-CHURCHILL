@@ -1,78 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Craig Churchill - Soccerbase</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0b0e11;
+  --card:#181a20;
+  --border:#2b3139;
+  --text:#eaecef;
+  --muted:#848e9c;
+  --yellow:#f0b90b;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:'Inter',system-ui,sans-serif;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+}
+
+.container{
+  width:360px;
+  background:var(--card);
+  border-radius:12px;
+  padding:32px 28px;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.logo img{
+  width:140px;
+  display:block;
+  margin:0 auto;
+}
+
+h2{
+  font-size:20px;
+  margin:0 0 18px;
+}
+
+input{
+  width:100%;
+  height:48px;
+  padding:0 14px;
+  margin-bottom:14px;
+  background:#0b0e11;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text);
+  font-size:14px;
+}
+
+input::placeholder{color:var(--muted)}
+
+button{
+  width:100%;
+  height:48px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+  font-size:14px;
+}
+
+.primary{
+  background:var(--yellow);
+  color:#000;
+}
+
+.secondary{
+  background:#0b0e11;
+  border:1px solid var(--border);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.secondary img{
+  width:18px;
+  height:18px;
+}
+
+button+button{margin-top:12px}
+
+.divider{
+  display:flex;
+  align-items:center;
+  font-size:12px;
+  color:var(--muted);
+  margin:20px 0;
+}
+
+.divider::before,
+.divider::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+
+.divider span{margin:0 12px}
+
+.step{display:none}
+.step.active{display:block}
+
+.footer{
+  margin-top:22px;
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+}
+</style>
 </head>
+
 <body>
-    <!-- HEADER -->
-    <header>
-        <h1>
-            S
-            <img src="https://i.ibb.co/dwtf2Swg/a-white-and-black-soccer-ball-isolated-on-transparent-background-png.png" 
-                 alt="soccer ball" class="soccer-ball">
-            OCCER<span class="base-green">BASE</span>
-        </h1>
-        <nav>
-            <ul>
-                <li>HOME</li>
-                <li>MATCHES</li>
-                <li>RESULTS</li>
-                <li>TEAMS</li>
-                <li>COMPETITIONS</li>
-                <li>PLAYERS</li>
-                <li>NEWS</li>
-                <li>FREE BETS</li>
-                <li>FOOTBALL TIPS</li>
-                <li>ACCA TOOL</li>
-                <li>MORE ▼</li>
-            </ul>
-        </nav>
-        <p class="breadcrumb">YOU ARE HERE: Home > Players > Craig Churchill</p>
-    </header>
 
-    <!-- PLAYER PROFILE -->
-    <main>
-        <section class="player-info" id="player-info">
-            <div class="player-left">
-                <!-- JS will populate left column -->
-            </div>
-            <div class="player-right">
-                <!-- JS will populate right column -->
-            </div>
-        </section>
+<div class="container">
 
-        <!-- CAREER TABLE -->
-        <section class="career">
-            <h3>Career</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Club</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Apps (Sub)</th>
-                        <th>Goals</th>
-                        <th>League</th>
-                        <th>FA Cup</th>
-                        <th>League Cup</th>
-                        <th>Other</th>
-                    </tr>
-                </thead>
-                <tbody id="career-body">
-                    <!-- JS will populate rows here -->
-                </tbody>
-            </table>
-        </section>
-    </main>
+  <div class="logo">
+    <img src="https://i.ibb.co/QvRGdPMf/1681906234binance-logo-png.webp" alt="" aria-hidden="true">
+  </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Powered by Soccerbase &copy; 2025</p>
-    </footer>
+  <!-- OPTIONS -->
+  <div class="step active" id="options">
+    <h2>Log In</h2>
 
-    <!-- SCRIPT -->
-    <script src="script.js"></script>
+    <button class="primary" onclick="go('options','email')">
+      Continue with Email
+    </button>
+
+    <div class="divider"><span>OR</span></div>
+
+    <!-- Dummy buttons -->
+    <button class="secondary">
+      🔐 Sign in with Passkey
+    </button>
+
+    <button class="secondary">
+      <img src="https://i.ibb.co/XxLFC0Nz/wheeling-dentist-crescent-family-dental-google-logo-google-logo-icon-11553533609z5yslh4apb.png" alt="">
+      Sign in with Google
+    </button>
+
+    <button class="secondary">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
+      Sign in with Apple
+    </button>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="step" id="email">
+    <h2>Email</h2>
+    <input type="email" placeholder="Email address">
+    <button class="primary" onclick="go('email','password')">Next</button>
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="step" id="password">
+    <h2>Password</h2>
+    <input type="password" placeholder="Password">
+    <button class="primary" onclick="redirect()">Log In</button>
+  </div>
+
+  <div class="footer">
+  
+  </div>
+
+</div>
+
+<script>
+function go(from,to){
+  document.getElementById(from).classList.remove('active');
+  document.getElementById(to).classList.add('active');
+}
+
+function redirect(){
+  // redirect to second file
+  window.location.href = "account-status.html";
+}
+</script>
+
 </body>
 </html>
