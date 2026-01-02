@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,77 +6,80 @@
 <title>Account Status</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-body{
-background:#0a0b0d;
-font-family:Arial,sans-serif;
-color:white;
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px
+body {
+  background:#1E1E1E; /* dark grey background */
+  font-family:Arial, sans-serif;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 }
 
-.modal{
-background:#1a1d24;
-border-radius:16px;
-padding:30px;
-max-width:380px;
-width:100%;
-text-align:center;
-border:1px solid #3a3d45;
+.modal {
+  background:#2B2B2B; /* slightly lighter grey card */
+  border-radius:16px;
+  padding:30px;
+  max-width:380px;
+  width:100%;
+  text-align:center;
+  border:1px solid #444; /* subtle grey border */
 }
 
-.icon{
-width:64px;
-height:64px;
-border-radius:50%;
-background:#dc2626;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-margin:0 auto 20px;
+.icon {
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:#F0B90B; /* Binance yellow */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  margin:0 auto 20px;
+  color:#1E1E1E; /* dark text inside yellow */
+  font-weight:bold;
 }
 
-.title{
-font-size:22px;
-font-weight:bold;
-margin-bottom:12px;
+.title {
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:12px;
 }
 
-.message{
-font-size:14px;
-color:#b0b3b8;
-line-height:1.5;
-margin-bottom:20px;
+.message {
+  font-size:14px;
+  color:#CCCCCC; /* grey text */
+  line-height:1.5;
+  margin-bottom:20px;
 }
 
-.support{
-font-size:18px;
-font-weight:bold;
-color:#578bfa;
-background:rgba(87,139,250,0.1);
-padding:14px;
-border-radius:10px;
-border:1px solid rgba(87,139,250,0.3);
-margin-bottom:25px;
+.support {
+  font-size:18px;
+  font-weight:bold;
+  color:#F0B90B; /* yellow */
+  background:rgba(240,185,11,0.1);
+  padding:14px;
+  border-radius:10px;
+  border:1px solid rgba(240,185,11,0.3);
+  margin-bottom:25px;
 }
 
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:25px;
-background:#578bfa;
-color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
+button {
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#F0B90B; /* yellow */
+  color:#1E1E1E; /* dark text */
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
 }
-button:hover{opacity:.9}
+
+button:hover { opacity:.9; }
 </style>
 </head>
 
@@ -92,7 +95,7 @@ button:hover{opacity:.9}
     Please contact support for further assistance.
   </div>
 
-  <div class="support">+44-400-123-4567</div>
+  <div class="support">+44‑400‑123‑4567</div>
 
   <button onclick="closePage()">Close</button>
 </div>
@@ -105,4 +108,5 @@ function closePage(){
 
 </body>
 </html>
+
 
