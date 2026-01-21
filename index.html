@@ -1,95 +1,187 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bypass Tools</title>
+<title>Bypass Tools | Secure Automation Utilities</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+:root{
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --border:#e5e7eb;
+    --text:#0f172a;
+    --muted:#64748b;
+}
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#ffffff url("https://www.transparenttextures.com/patterns/cubes.png");
-    color:#111;
+    font-family:Inter,system-ui,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
+
+/* Header */
 header{
-    padding:16px 20px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    padding:16px 24px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+.nav{
+    max-width:1100px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #ddd;
 }
-header h1{
-    margin:0;
-    font-size:20px;
+.brand{
     display:flex;
     align-items:center;
     gap:10px;
+    font-weight:600;
+    font-size:18px;
 }
-.tool-icon{
-    width:26px;
-    height:26px;
+.brand img{
+    width:28px;
 }
 .translate-btn{
     cursor:pointer;
-    padding:6px 10px;
-    border:1px solid #333;
-    border-radius:4px;
-    font-size:12px;
+    font-size:13px;
+    padding:6px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
     background:#fff;
 }
-.container{
-    max-width:900px;
+
+/* Hero */
+.hero{
+    max-width:1100px;
+    margin:60px auto 40px;
+    padding:0 20px;
+    text-align:center;
+}
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+.hero p{
+    color:var(--muted);
+    font-size:16px;
+    max-width:600px;
     margin:auto;
-    padding:20px;
+}
+
+/* Pricing */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
 }
 .plans{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
 }
 .plan{
-    border:1px solid #ddd;
-    border-radius:6px;
-    padding:16px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px;
     text-align:center;
-    background:#fff;
+    transition:.2s ease;
 }
-.plan h2{
+.plan:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+.plan h3{
     margin-top:0;
+    font-size:18px;
 }
 .price{
-    font-size:22px;
-    font-weight:bold;
-    margin:10px 0;
+    font-size:32px;
+    font-weight:700;
+    margin:14px 0;
+}
+.plan ul{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+    color:var(--muted);
+    font-size:14px;
+}
+.plan ul li{
+    margin:8px 0;
 }
 button{
-    padding:10px 16px;
+    padding:12px 20px;
+    width:100%;
     border:none;
-    background:#000;
+    background:var(--secondary);
     color:#fff;
-    border-radius:4px;
+    border-radius:8px;
+    font-weight:600;
     cursor:pointer;
 }
 button:hover{
-    opacity:.85;
+    opacity:.9;
 }
+
+/* Payment */
 .payment{
     display:none;
-    margin-top:30px;
-    border-top:1px solid #ddd;
-    padding-top:20px;
+    margin-top:50px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px;
+}
+.payment h3{
+    margin-top:0;
 }
 .payment div{
-    margin:8px 0;
+    margin:10px 0;
+    padding:10px;
+    background:#f1f5f9;
+    border-radius:6px;
     font-family:monospace;
     word-break:break-all;
 }
+.note{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* Footer */
 footer{
+    margin-top:80px;
+    padding:30px 20px;
+    background:#fff;
+    border-top:1px solid var(--border);
     text-align:center;
-    margin-top:40px;
-    font-size:12px;
-    color:#666;
+    font-size:13px;
+    color:var(--muted);
+}
+footer a{
+    color:var(--muted);
+    margin:0 10px;
+    text-decoration:none;
+}
+footer a:hover{
+    text-decoration:underline;
 }
 </style>
 </head>
@@ -97,76 +189,113 @@ footer{
 <body>
 
 <header>
-    <h1 id="title">
-        <img class="tool-icon" src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
-        Herramientas de Bypass
-    </h1>
-    <div class="translate-btn" onclick="toggleLang()">ES / EN</div>
+    <div class="nav">
+        <div class="brand" id="title">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
+            Bypass Tools
+        </div>
+        <div class="translate-btn" onclick="toggleLang()">ES / EN</div>
+    </div>
 </header>
+
+<section class="hero">
+    <h1 id="heroTitle">Reliable Bypass & Automation Utilities</h1>
+    <p id="heroText">
+        Professional-grade tools designed for secure automation workflows and proxy-based integrations.
+    </p>
+</section>
 
 <div class="container">
 
     <div class="plans">
         <div class="plan">
-            <h2 id="basicTitle">Plan Básico</h2>
+            <h3 id="basicTitle">Basic Plan</h3>
             <div class="price">€15</div>
-            <button onclick="showPayment()">COMPRAR</button>
+            <ul>
+                <li>Limited access</li>
+                <li>Standard support</li>
+                <li>Single integration</li>
+            </ul>
+            <button onclick="showPayment()">Buy Now</button>
         </div>
 
         <div class="plan">
-            <h2 id="standardTitle">Plan Estándar</h2>
+            <h3 id="standardTitle">Standard Plan</h3>
             <div class="price">€25</div>
-            <button onclick="showPayment()">COMPRAR</button>
+            <ul>
+                <li>Full access</li>
+                <li>Priority support</li>
+                <li>Proxy integration</li>
+            </ul>
+            <button onclick="showPayment()">Buy Now</button>
         </div>
 
         <div class="plan">
-            <h2 id="premiumTitle">Plan Premium</h2>
+            <h3 id="premiumTitle">Premium Plan</h3>
             <div class="price">€50</div>
-            <button onclick="showPayment()">COMPRAR</button>
+            <ul>
+                <li>Unlimited access</li>
+                <li>24/7 support</li>
+                <li>Advanced automation</li>
+            </ul>
+            <button onclick="showPayment()">Buy Now</button>
         </div>
     </div>
 
     <div class="payment" id="paymentBox">
-        <h2 id="payTitle">Direcciones de Pago</h2>
+        <h3 id="payTitle">Payment Information</h3>
+
         <div><strong>BTC:</strong> bc1q7zsnwwg0rr9mtpskmq6lh7tewpp3clj07gk7qv</div>
         <div><strong>USDT (TRC20):</strong> TNyA8b2gyr4Ao1hiHv2jh51qrgJnnrmjxZ</div>
         <div><strong>ETH:</strong> 0x13bd1f7e17735aa7507093e43623699737dc9c9f</div>
-        <p id="note">Después del pago, envía el hash de la transacción.</p>
+
+        <div class="note" id="note">
+            After payment, please send the transaction hash for verification.
+        </div>
     </div>
 
 </div>
 
 <footer>
-    © Bypass Tools
+    © 2026 Bypass Tools ·
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+    <a href="#">Support</a>
 </footer>
 
 <script>
-let lang = "es";
+let lang = "en";
 
 const TEXT = {
     es:{
         title:"Herramientas de Bypass",
+        heroTitle:"Herramientas de Automatización Confiables",
+        heroText:"Utilidades profesionales diseñadas para flujos de automatización seguros e integraciones con proxy.",
         basic:"Plan Básico",
         standard:"Plan Estándar",
         premium:"Plan Premium",
-        buy:"COMPRAR",
-        pay:"Direcciones de Pago",
-        note:"Después del pago, envía el hash de la transacción."
+        buy:"Comprar ahora",
+        pay:"Información de Pago",
+        note:"Después del pago, envía el hash de la transacción para verificación."
     },
     en:{
         title:"Bypass Tools",
+        heroTitle:"Reliable Bypass & Automation Utilities",
+        heroText:"Professional-grade tools designed for secure automation workflows and proxy-based integrations.",
         basic:"Basic Plan",
         standard:"Standard Plan",
         premium:"Premium Plan",
-        buy:"BUY",
-        pay:"Payment Addresses",
-        note:"After payment, send the transaction hash."
+        buy:"Buy Now",
+        pay:"Payment Information",
+        note:"After payment, please send the transaction hash for verification."
     }
 };
 
 function toggleLang(){
-    lang = lang === "es" ? "en" : "es";
+    lang = lang === "en" ? "es" : "en";
     document.getElementById("title").lastChild.textContent = " " + TEXT[lang].title;
+    document.getElementById("heroTitle").innerText = TEXT[lang].heroTitle;
+    document.getElementById("heroText").innerText = TEXT[lang].heroText;
     document.getElementById("basicTitle").innerText = TEXT[lang].basic;
     document.getElementById("standardTitle").innerText = TEXT[lang].standard;
     document.getElementById("premiumTitle").innerText = TEXT[lang].premium;
@@ -177,6 +306,7 @@ function toggleLang(){
 
 function showPayment(){
     document.getElementById("paymentBox").style.display="block";
+    document.getElementById("paymentBox").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
