@@ -5,7 +5,6 @@
 <title>Bypass Tools | Secure Automation Utilities</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,19 +17,13 @@
     --text:#0f172a;
     --muted:#64748b;
 }
-
-*{
-    box-sizing:border-box;
-}
-
+*{ box-sizing:border-box; }
 body{
     margin:0;
     font-family:Inter,system-ui,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
 }
-
-/* Header */
 header{
     background:#fff;
     border-bottom:1px solid var(--border);
@@ -53,9 +46,7 @@ header{
     font-weight:600;
     font-size:18px;
 }
-.brand img{
-    width:28px;
-}
+.brand img{ width:28px; }
 .translate-btn{
     cursor:pointer;
     font-size:13px;
@@ -64,8 +55,6 @@ header{
     border-radius:6px;
     background:#fff;
 }
-
-/* Hero */
 .hero{
     max-width:1100px;
     margin:60px auto 40px;
@@ -82,8 +71,6 @@ header{
     max-width:600px;
     margin:auto;
 }
-
-/* Pricing */
 .container{
     max-width:1100px;
     margin:auto;
@@ -106,10 +93,7 @@ header{
     transform:translateY(-4px);
     box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
-.plan h3{
-    margin-top:0;
-    font-size:18px;
-}
+.plan h3{ margin-top:0; font-size:18px; }
 .price{
     font-size:32px;
     font-weight:700;
@@ -122,9 +106,7 @@ header{
     color:var(--muted);
     font-size:14px;
 }
-.plan ul li{
-    margin:8px 0;
-}
+.plan ul li{ margin:8px 0; }
 button{
     padding:12px 20px;
     width:100%;
@@ -135,11 +117,7 @@ button{
     font-weight:600;
     cursor:pointer;
 }
-button:hover{
-    opacity:.9;
-}
-
-/* Payment */
+button:hover{ opacity:.9; }
 .payment{
     display:none;
     margin-top:50px;
@@ -148,9 +126,7 @@ button:hover{
     border-radius:14px;
     padding:26px;
 }
-.payment h3{
-    margin-top:0;
-}
+.payment h3{ margin-top:0; }
 .payment div{
     margin:10px 0;
     padding:10px;
@@ -164,8 +140,6 @@ button:hover{
     color:var(--muted);
     margin-top:10px;
 }
-
-/* Footer */
 footer{
     margin-top:80px;
     padding:30px 20px;
@@ -180,9 +154,7 @@ footer a{
     margin:0 10px;
     text-decoration:none;
 }
-footer a:hover{
-    text-decoration:underline;
-}
+footer a:hover{ text-decoration:underline; }
 </style>
 </head>
 
@@ -252,6 +224,20 @@ footer a:hover{
         <div class="note" id="note">
             After payment, please send the transaction hash for verification.
         </div>
+
+        <!-- ADDED ONLY -->
+        <div class="note" style="margin-top:14px;">
+            <strong>Status:</strong> €15 not active — get €25
+        </div>
+
+        <button style="margin-top:12px;">
+            Did you just pay? €15 proxy
+        </button>
+
+        <div class="note">
+            Please send a screenshot of your payment for confirmation.
+        </div>
+        <!-- END ADD -->
     </div>
 
 </div>
@@ -265,7 +251,6 @@ footer a:hover{
 
 <script>
 let lang = "en";
-
 const TEXT = {
     es:{
         title:"Herramientas de Bypass",
@@ -290,7 +275,6 @@ const TEXT = {
         note:"After payment, please send the transaction hash for verification."
     }
 };
-
 function toggleLang(){
     lang = lang === "en" ? "es" : "en";
     document.getElementById("title").lastChild.textContent = " " + TEXT[lang].title;
@@ -303,7 +287,6 @@ function toggleLang(){
     document.getElementById("payTitle").innerText = TEXT[lang].pay;
     document.getElementById("note").innerText = TEXT[lang].note;
 }
-
 function showPayment(){
     document.getElementById("paymentBox").style.display="block";
     document.getElementById("paymentBox").scrollIntoView({behavior:"smooth"});
