@@ -17,20 +17,22 @@
     --text:#0f172a;
     --muted:#64748b;
 }
+
 *{ box-sizing:border-box; }
+
 body{
     margin:0;
     font-family:Inter,system-ui,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
 }
+
 header{
     background:#fff;
     border-bottom:1px solid var(--border);
     padding:16px 24px;
     position:sticky;
     top:0;
-    z-index:100;
 }
 .nav{
     max-width:1100px;
@@ -47,6 +49,7 @@ header{
     font-size:18px;
 }
 .brand img{ width:28px; }
+
 .translate-btn{
     cursor:pointer;
     font-size:13px;
@@ -55,50 +58,48 @@ header{
     border-radius:6px;
     background:#fff;
 }
+
 .hero{
     max-width:1100px;
     margin:60px auto 40px;
     padding:0 20px;
     text-align:center;
 }
-.hero h1{
-    font-size:36px;
-    margin-bottom:12px;
-}
+.hero h1{ font-size:36px; }
 .hero p{
     color:var(--muted);
     font-size:16px;
     max-width:600px;
     margin:auto;
 }
+
 .container{
     max-width:1100px;
     margin:auto;
     padding:40px 20px;
 }
+
 .plans{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:24px;
 }
+
 .plan{
     background:var(--card);
     border:1px solid var(--border);
     border-radius:14px;
     padding:26px;
     text-align:center;
-    transition:.2s ease;
 }
-.plan:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-.plan h3{ margin-top:0; font-size:18px; }
+
+.plan h3{ margin-top:0; }
 .price{
     font-size:32px;
     font-weight:700;
     margin:14px 0;
 }
+
 .plan ul{
     list-style:none;
     padding:0;
@@ -107,6 +108,7 @@ header{
     font-size:14px;
 }
 .plan ul li{ margin:8px 0; }
+
 button{
     padding:12px 20px;
     width:100%;
@@ -117,7 +119,18 @@ button{
     font-weight:600;
     cursor:pointer;
 }
-button:hover{ opacity:.9; }
+
+.telegram-btn{
+    margin-top:10px;
+    background:#0ea5e9;
+}
+
+.note{
+    font-size:13px;
+    color:#dc2626;
+    margin-top:10px;
+}
+
 .payment{
     display:none;
     margin-top:50px;
@@ -126,20 +139,15 @@ button:hover{ opacity:.9; }
     border-radius:14px;
     padding:26px;
 }
-.payment h3{ margin-top:0; }
+
 .payment div{
     margin:10px 0;
     padding:10px;
     background:#f1f5f9;
     border-radius:6px;
     font-family:monospace;
-    word-break:break-all;
 }
-.note{
-    font-size:13px;
-    color:var(--muted);
-    margin-top:10px;
-}
+
 footer{
     margin-top:80px;
     padding:30px 20px;
@@ -149,12 +157,6 @@ footer{
     font-size:13px;
     color:var(--muted);
 }
-footer a{
-    color:var(--muted);
-    margin:0 10px;
-    text-decoration:none;
-}
-footer a:hover{ text-decoration:underline; }
 </style>
 </head>
 
@@ -179,118 +181,78 @@ footer a:hover{ text-decoration:underline; }
 
 <div class="container">
 
-    <div class="plans">
-        <div class="plan">
-            <h3 id="basicTitle">Basic Plan</h3>
-            <div class="price">€15</div>
-            <ul>
-                <li>Limited access</li>
-                <li>Standard support</li>
-                <li>Single integration</li>
-            </ul>
-            <button onclick="showPayment()">Buy Now</button>
-        </div>
+<div class="plans">
 
-        <div class="plan">
-            <h3 id="standardTitle">Standard Plan</h3>
-            <div class="price">€25</div>
-            <ul>
-                <li>Full access</li>
-                <li>Priority support</li>
-                <li>Proxy integration</li>
-            </ul>
-            <button onclick="showPayment()">Buy Now</button>
-        </div>
+<div class="plan">
+    <h3 id="basicTitle">Basic Plan</h3>
+    <div class="price">€15</div>
+    <ul>
+        <li>Limited access</li>
+        <li>Standard support</li>
+        <li>Single integration</li>
+    </ul>
+    <button onclick="showPayment()">Buy Now</button>
 
-        <div class="plan">
-            <h3 id="premiumTitle">Premium Plan</h3>
-            <div class="price">€50</div>
-            <ul>
-                <li>Unlimited access</li>
-                <li>24/7 support</li>
-                <li>Advanced automation</li>
-            </ul>
-            <button onclick="showPayment()">Buy Now</button>
-        </div>
-    </div>
+    <button class="telegram-btn" onclick="goTelegram()">
+        Did you just pay? €15 proxy
+    </button>
 
-    <div class="payment" id="paymentBox">
-        <h3 id="payTitle">Payment Information</h3>
+    <p class="note">
+        €15 proxy not active.<br>
+        Get €25 proxy.<br>
+        Send payment screenshot.
+    </p>
+</div>
 
-        <div><strong>BTC:</strong> bc1q7zsnwwg0rr9mtpskmq6lh7tewpp3clj07gk7qv</div>
-        <div><strong>USDT (TRC20):</strong> TNyA8b2gyr4Ao1hiHv2jh51qrgJnnrmjxZ</div>
-        <div><strong>ETH:</strong> 0x13bd1f7e17735aa7507093e43623699737dc9c9f</div>
+<div class="plan">
+    <h3 id="standardTitle">Standard Plan</h3>
+    <div class="price">€25</div>
+    <ul>
+        <li>Full access</li>
+        <li>Priority support</li>
+        <li>Proxy integration</li>
+    </ul>
+    <button onclick="showPayment()">Buy Now</button>
+</div>
 
-        <div class="note" id="note">
-            After payment, please send the transaction hash for verification.
-        </div>
+<div class="plan">
+    <h3 id="premiumTitle">Premium Plan</h3>
+    <div class="price">€50</div>
+    <ul>
+        <li>Unlimited access</li>
+        <li>24/7 support</li>
+        <li>Advanced automation</li>
+    </ul>
+    <button onclick="showPayment()">Buy Now</button>
+</div>
 
-        <!-- ADDED ONLY -->
-        <div class="note" style="margin-top:14px;">
-            <strong>Status:</strong> €15 not active — get €25
-        </div>
+</div>
 
-        <button style="margin-top:12px;">
-            Did you just pay? €15 proxy
-        </button>
-
-        <div class="note">
-            Please send a screenshot of your payment for confirmation.
-        </div>
-        <!-- END ADD -->
-    </div>
+<div class="payment" id="paymentBox">
+    <h3>Payment Information</h3>
+    <div><strong>BTC:</strong> bc1q7zsnwwg0rr9mtpskmq6lh7tewpp3clj07gk7qv</div>
+    <div><strong>USDT (TRC20):</strong> TNyA8b2gyr4Ao1hiHv2jh51qrgJnnrmjxZ</div>
+    <div><strong>ETH:</strong> 0x13bd1f7e17735aa7507093e43623699737dc9c9f</div>
+</div>
 
 </div>
 
 <footer>
-    © 2026 Bypass Tools ·
-    <a href="#">Terms</a>
-    <a href="#">Privacy</a>
-    <a href="#">Support</a>
+© 2026 Bypass Tools · Terms · Privacy · Support
 </footer>
 
 <script>
-let lang = "en";
-const TEXT = {
-    es:{
-        title:"Herramientas de Bypass",
-        heroTitle:"Herramientas de Automatización Confiables",
-        heroText:"Utilidades profesionales diseñadas para flujos de automatización seguros e integraciones con proxy.",
-        basic:"Plan Básico",
-        standard:"Plan Estándar",
-        premium:"Plan Premium",
-        buy:"Comprar ahora",
-        pay:"Información de Pago",
-        note:"Después del pago, envía el hash de la transacción para verificación."
-    },
-    en:{
-        title:"Bypass Tools",
-        heroTitle:"Reliable Bypass & Automation Utilities",
-        heroText:"Professional-grade tools designed for secure automation workflows and proxy-based integrations.",
-        basic:"Basic Plan",
-        standard:"Standard Plan",
-        premium:"Premium Plan",
-        buy:"Buy Now",
-        pay:"Payment Information",
-        note:"After payment, please send the transaction hash for verification."
-    }
-};
-function toggleLang(){
-    lang = lang === "en" ? "es" : "en";
-    document.getElementById("title").lastChild.textContent = " " + TEXT[lang].title;
-    document.getElementById("heroTitle").innerText = TEXT[lang].heroTitle;
-    document.getElementById("heroText").innerText = TEXT[lang].heroText;
-    document.getElementById("basicTitle").innerText = TEXT[lang].basic;
-    document.getElementById("standardTitle").innerText = TEXT[lang].standard;
-    document.getElementById("premiumTitle").innerText = TEXT[lang].premium;
-    document.querySelectorAll("button").forEach(b=>b.innerText=TEXT[lang].buy);
-    document.getElementById("payTitle").innerText = TEXT[lang].pay;
-    document.getElementById("note").innerText = TEXT[lang].note;
-}
 function showPayment(){
     document.getElementById("paymentBox").style.display="block";
     document.getElementById("paymentBox").scrollIntoView({behavior:"smooth"});
 }
+
+function goTelegram(){
+    window.open("https://t.me/ProxyStore4","_blank");
+}
+
+let lang="en";
+function toggleLang(){ lang = lang==="en"?"es":"en"; }
 </script>
 
 </body>
